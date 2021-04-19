@@ -1,0 +1,85 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-19T09:48:46.308Z",
+        "line": 3,
+        "name": "",
+        "description": "",
+        "id": ";",
+        "after": [
+          {
+            "result": {
+              "duration": 1066000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 36557000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "go to webpage",
+            "match": {
+              "location": "stepdefinitions.TakeScreenshotOfSpecificElementStepDefs.go_to_webpage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15962000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user select the element which will take screenshot of element",
+            "match": {
+              "location": "stepdefinitions.TakeScreenshotOfSpecificElementStepDefs.user_select_the_element_which_will_take_screenshot_of_element()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2368000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "take a screenshot of specific element",
+            "match": {
+              "location": "stepdefinitions.TakeScreenshotOfSpecificElementStepDefs.take_a_screenshot_of_specific_element()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@elementScreenshot"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ScreenshotOfSpecificElement.feature",
+    "tags": [
+      {
+        "name": "@elementScreenshot",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

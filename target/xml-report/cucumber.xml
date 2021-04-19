@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="56.51">
+<testcase classname="" name="_2" time="56.166">
+<system-out><![CDATA[Given go to webpage.........................................................passed
+When user select the element which will take screenshot of element..........passed
+Then take a screenshot of specific element..................................passed
+]]></system-out>
+</testcase>
+</testsuite>
