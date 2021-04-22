@@ -10,8 +10,8 @@ public class Hooks {
     //    @Before
 //    public void setUp(){
 //    }
-    @After
-  //  public void tearDown(){
+     @After
+//  //  public void tearDown(){
     public void tearDown(Scenario scenario){
         final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
         if (scenario.isFailed()) {

@@ -12,7 +12,9 @@ import utilities.ReusableMethods;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +32,7 @@ public class TakeScreenshotOfSpecificElementStepDefs {
 
     @Then("take a screenshot of specific element")
     public void take_a_screenshot_of_specific_element() throws IOException {
-        WebElement selectedPicture = Driver.getDriver().findElement(By.className("ciyashop-product-gallery__image"));
+        WebElement selectedPicture = Driver.getDriver().findElement(By.xpath("(//div[@class='slick-slide slick-current slick-active'])[2]"));
         File screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.FILE);
         BufferedImage fullImage = ImageIO.read(screenshot);
 
@@ -67,19 +69,59 @@ public class TakeScreenshotOfSpecificElementStepDefs {
 
     @Then("download picture like save as")
     public void downloadPictureLikeSaveAs() throws InterruptedException, AWTException {
-        WebElement selectedPicture = Driver.getDriver().findElement(By.className("ciyashop-product-gallery__image"));
+      //  Driver.getDriver().findElement(By.xpath("(//div[@class='slick-slide slick-current slick-active'])[1]")).click();
+        WebElement selectedPictured = Driver.getDriver().findElement(By.xpath("//img[@class='attachment-thumbnail size-thumbnail']"));
 
-        Actions actions = new Actions(Driver.getDriver());
-        actions.contextClick(selectedPicture).build().perform();
+        Actions actions =new Actions(Driver.getDriver());
+        actions.moveToElement(selectedPictured).build().perform();
 
-        actions.sendKeys(Keys.COMMAND+"V").build().perform();
-        Thread.sleep(2000);
+        //ReusableMethods.scrollToElement(Driver.getDriver().findElement(By.className("ciyashop-product-thumbnail__image")));
+      //  Point elementPoint = selectedPictured.getLocation();
+
+
+       // Actions actions = new Actions(Driver.getDriver());
+        //actions.moveToElement(selectedPicture);
+//        actions.contextClick(selectedPicture).build().perform();
+
+       // actions.sendKeys(Keys.COMMAND+"V").build().perform();
+        Thread.sleep(1000);
         Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_S);
-        robot.keyRelease(KeyEvent.VK_S);
+         ReusableMethods.wait(5);
+       // System.out.println(elementPoint.getX()+"  " +elementPoint.getY());
+      //  robot.mouseMove(235 ,662);
 
+        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+        Thread.sleep(1000);
+
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        Thread.sleep(1000);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        Thread.sleep(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+
+
+//        robot.keyPress(KeyEvent.VK_S);
+//        robot.keyRelease(KeyEvent.VK_S);
+//
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
+
+//        robot.keyPress(KeyEvent.VK_DOWN);
+//        robot.keyRelease(KeyEvent.VK_DOWN);
+//        Thread.sleep(2000);
+//        robot.keyPress(KeyEvent.VK_DOWN);
+//        robot.keyRelease(KeyEvent.VK_DOWN);
+//        Thread.sleep(2000);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
+//        Thread.sleep(2000);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
+
 
     }
 }
